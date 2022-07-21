@@ -52,4 +52,4 @@ def resultado_clientes(request):
         clientes = Cliente.objects.filter(nombre__icontains = nombre)
         return render(request, "AppProyecto/resultado_clientes.html", {"clientes": clientes})
     else:
-        return render(request, "AppProyecto/busqueda_clientes.html", {"error": "No ha introducido nada en la busqueda!!"})
+        return render(request, "AppProyecto/busqueda_clientes.html", {"error": "No ha introducido nada en la busqueda!!"}) 

@@ -6,6 +6,8 @@
 
 {% block contenido_main %}
 
+{% if clientes %}
+
 {% for cliente in clientes %}
 
 <ul>
@@ -14,4 +16,9 @@
 </ul>
 {% endfor %}
 
+{% else %}
+<p style="color: red;">NO SE HA PODIDO ENCONTRAR CLIENTES!!</p>
+{% endif %}
+
 {% endblock %}
+
