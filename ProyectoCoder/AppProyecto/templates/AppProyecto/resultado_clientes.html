@@ -1,0 +1,17 @@
+{% extends "AppProyecto/index.html" %}
+
+{% block titulo %}
+<h1 style="color: blue"> Resultado busqueda </h1>
+{% endblock %}
+
+{% block contenido_main %}
+
+{% for cliente in clientes %}
+
+<ul>
+    <ul>{{cliente.nombre}} {{cliente.apellido}} y tengo {{cliente.edad}} años
+    </ul>
+</ul>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+    {% extends 'AppProyecto/index.html' %}
+
+    {% block titulo %}
+    <h1 style="color: blue"> EMPRESA </h1>
+    {% endblock %}
+
+    {% if empresa_formulario.errors %}
+    <p style="color: red"> HA OCURRIDO UN ERROR</p>
+    {% endif %}
+
+    {% block contenido_main %}
+    <form action="{% url 'empresa' %}", method="POST"> {% csrf_token %} 
+        <table>
+            {{empresa_formulario.as_table}}
+        </table>
+        <input type="submit" value="ENVIAR">
+    </form>
+    {% endblock %}
