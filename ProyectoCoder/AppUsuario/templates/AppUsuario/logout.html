@@ -1,11 +1,13 @@
 {% extends 'AppUsuario/index.html' %}
 
-{% block titulo %}
-<h1 style="color:blue">Logout</h1>
+{% block navbar %}
+        <a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
+        <a class="btn btn-primary" href="{% url 'register' %}">Registrarse</a>
+        <a class="btn btn-primary" href="{% url 'login' %}">Iniciar Sesion</a>
 {% endblock %}
 
-{% block main_usuario %}
+{% block formulario %}
 
-Sesion cerrada!
+<h1>Sesion Cerrada</h1>
 
 {% endblock %}

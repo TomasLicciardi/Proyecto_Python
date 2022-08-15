@@ -3,7 +3,6 @@ from .views import *
 from AppProyecto.views import *
 
 urlpatterns = [
-    path("", inicio, name="inicio"),
     path("list_cliente/", ListCliente.as_view(), name="list_clientes"),
     path("cliente/new/", CreateCliente.as_view(), name="create_clientes"),
     path("cliente/edit/<pk>", UpdateCliente.as_view(), name="update_clientes"),

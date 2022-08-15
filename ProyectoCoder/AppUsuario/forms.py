@@ -22,7 +22,6 @@ class UserEditForm(forms.Form):
     last_name = forms.CharField(label='Apellido', max_length=30, required=False)
     password_1 = forms.CharField(label='Password', widget=forms.PasswordInput, required=False)
     password_2 = forms.CharField(label='Repetir Password', widget=forms.PasswordInput, required=False)
-    avatar = forms.ImageField(required=False)
 
 
 class AvatarForm(forms.Form):

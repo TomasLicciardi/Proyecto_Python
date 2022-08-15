@@ -1,11 +1,12 @@
 {% extends 'AppUsuario/index.html' %}
 
-{% block titulo %}
-<h1 style="color:blue">Signup</h1>
+{% block navbar %}
+        <a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
 {% endblock %}
 
-{% block main_usuario %}
+{% block formulario %}
 
+<h2>REGISTRARSE</h2>
 <form action="{% url 'register' %}"  method="POST"> {% csrf_token %}
         
     {{ form.as_p }}

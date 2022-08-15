@@ -1,11 +1,13 @@
 {% extends 'AppUsuario/index.html' %}
 
-{% block titulo %}
-<h1 style="color:blue">Perfil</h1>
+{% block navbar %}
+        <a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
+        <a class="btn btn-primary" href="{% url 'logout' %}">Cerrar Sesion</a>
 {% endblock %}
 
-{% block main_usuario %}
+{% block formulario %}
 
+<h2>EDITAR PERFIL</h2>
 <form action="{% url 'edit_profile'  %}" method="POST">
     {% csrf_token %}
     <table>
