@@ -1,0 +1,17 @@
+    {% extends 'AppProyecto/index.html' %}
+
+    {% block acerca_de_mi %}
+    <a class="btn btn-primary" href="{% url 'list_empresas' %}">Mostrar Empresas</a>
+    {% endblock %}
+
+    {% block titulo %}
+    <h1 style="color: blue"> EMPRESAS </h1>
+    {% endblock %}
+
+    {% block main %}
+    <div class="container-fluid justify-content-center"><form method="post"> {% csrf_token %} 
+           Estás seguro de que quieres eliminar a "{{ object }}"?
+        <input type="submit" value="SI">
+    </form></div>
+    
+    {% endblock %}

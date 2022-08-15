@@ -1,0 +1,15 @@
+{% extends 'AppUsuario/index.html' %}
+
+{% block titulo %}
+<h1 style="color:blue">Signup</h1>
+{% endblock %}
+
+{% block main_usuario %}
+
+<form action="{% url 'register' %}"  method="POST"> {% csrf_token %}
+        
+    {{ form.as_p }}
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+  
+  </form>
+  {% endblock %}

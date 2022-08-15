@@ -1,0 +1,16 @@
+{% extends 'AppUsuario/index.html' %}
+
+{% block titulo %}
+<h1 style="color:blue">{{ mensaje }}</h1>
+{% endblock %}
+
+{% block main_usuario %}
+
+<form action="{% url 'login' %}"  method="POST"> {% csrf_token %}
+    
+    {{ form.as_p }}
+    <button type="submit">INICIAR SESION</button>
+
+</form>  
+
+  {% endblock %}

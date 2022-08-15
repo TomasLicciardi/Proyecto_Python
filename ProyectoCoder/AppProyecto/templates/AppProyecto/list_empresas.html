@@ -1,0 +1,23 @@
+{% extends "AppProyecto/index.html" %}
+
+{% block acerca_de_mi %}
+{% endblock %}
+
+{% block titulo %}
+<h1 style="color: blue"> EMPRESAS </h1>
+{% endblock %}
+
+{% block main %}
+
+<h2 style="color: green;">Listado Empresas</h2>
+
+{% for empresa in object_list %}
+    <ul><li>
+        {{ empresa }}
+        <a href="{% url 'delete_empresas' empresa.id %}">Eliminar</a>
+        <a href="{% url 'update_empresas' empresa.id %}">Modificar</a>
+    </li></ul>
+
+{% endfor %}
+{% endblock %}
+

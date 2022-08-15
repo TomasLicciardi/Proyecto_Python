@@ -1,0 +1,23 @@
+{% extends "AppProyecto/index.html" %}
+
+{% block acerca_de_mi %}
+{% endblock %}
+
+{% block titulo %}
+<h1 style="color: blue"> EMPLEADOS </h1>
+{% endblock %}
+
+{% block main %}
+
+<h2 style="color: green;">Listado Empleados</h2>
+
+{% for empleado in object_list %}
+    <ul><li>
+        {{ empleado }}
+        <a href="{% url 'delete_empleados' empleado.id %}">Eliminar</a>
+        <a href="{% url 'update_empleados' empleado.id %}">Modificar</a>
+    </li></ul>
+
+{% endfor %}
+{% endblock %}
+
