@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .models import Avatar
+import os
 # Create your views here.
 
 #Registro de usuario 
@@ -89,15 +90,21 @@ def logout_user(request):
 @login_required
 def add_avatar(request):
     if request.method == 'POST':
-        formulario=AvatarForm(request.POST, request.FILES)
-        if formulario.is_valid():
-            avatarViejo=Avatar.objects.get(user=request.user)
-            if(avatarViejo.imagen):
-                avatarViejo.delete()
-            avatar=Avatar(user=request.user, imagen=formulario.cleaned_data['imagen'])
-            avatar.save()
+        formulario = AvatarForm(request.POST, request.FILES)
+        if formulario.is_valid() and len(request.FILES) != 0 :
+            imagen = request.FILES['imagen']
+            avatar_v = Avatar.objects.filter(user=request.user.id)
+            if not avatar_v.exists():
+                avatar_n = Avatar(user=request.user, imagen=imagen)
+            else:
+                avatar_n = avatar_v[0]
+                if len(avatar_n.imagen) > 0:
+                    os.remove(avatar_n.imagen.path)
+                avatar_n.imagen = imagen
+            avatar_n.save()
             return render(request, 'AppUsuario/index.html', {'usuario':request.user, 'mensaje':'AVATAR AGREGADO EXITOSAMENTE'})
-    else:
-        formulario=AvatarForm()
+
+
+    formulario=AvatarForm()
     return render(request, 'AppUsuario/add_avatar.html', {'formulario':formulario, 'usuario':request.user})
 
