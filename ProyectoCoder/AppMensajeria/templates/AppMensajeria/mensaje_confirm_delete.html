@@ -1,0 +1,15 @@
+{% extends 'AppUsuario/index.html' %}
+
+{% block navbar %}
+<a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
+{% endblock %}
+
+{% block formulario %}
+<p>Estás seguro de eliminar el mensaje: {{ mensaje.titulo }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-warning" type="submit" value="Si, eliminar.">
+    <a class="btn btn-light" href="{% url 'mensajes' %}" >Cancelar</a>
+</form>
+{% endblock %}

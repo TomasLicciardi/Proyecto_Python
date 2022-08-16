@@ -1,0 +1,38 @@
+{% extends 'AppUsuario/index.html' %}
+
+{% block navbar %}
+<a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
+{% endblock %}
+
+{% block formulario %}
+
+{% if object_list %}
+                
+{% for mensaje in object_list %}
+
+    <h3>{{mensaje.titulo}}</h3>
+    <p class="post-meta">Mensaje Enviado por {{mensaje.emisor}} el {{mensaje.fecha}}</p>
+    <a class="btn btn-success" href="{%url 'detail_mensajes' mensaje.id%}">Leer</a>
+    <a class="btn btn-danger" href="{%url 'delete_mensajes' mensaje.id%}">Eliminar</a>
+
+{% endfor %}
+<div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="container mt-5">
+        <p><a href="{% url 'create_mensajes' %}" class="btn btn-primary">Nuevo mensaje</a></p>
+        <br>
+        <p><a href="{% url 'inicio' %}" class="btn btn-primary">Volver al inicio</a></p>
+    </div>
+</div>
+
+{% else %}
+    <h2>No hay mensajes aún</h2>
+    <br>
+    <p><a href="{% url 'create_mensajes' %}" class="btn btn-success">Nuevo mensaje</a></p>
+    <br>
+    <p><a href="{% url 'inicio' %}"class="btn btn-success">Volver al inicio</a></p>
+{% endif %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

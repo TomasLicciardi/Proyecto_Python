@@ -38,6 +38,7 @@
         <a class="btn btn-primary" href="{% url 'create_empresas' %}">Empresa</a>
         {% block acerca_de_mi %}
         <a class="btn btn-primary" href="#acerca_de_mi">Acerca de Mi</a>
+        <a class="btn btn-primary" href="{% url 'mensajes' %}">Mensajeria</a>
         <a class="btn btn-primary" href="#nosotros">Nosotros</a>
         {% endblock %}
         {% if not request.user.is_authenticated %}

@@ -1,0 +1,17 @@
+{% extends 'AppUsuario/index.html' %}
+
+{% block navbar %}
+<a class="navbar-brand" href="{% url 'inicio' %}">MI PAGINA!!</a>
+{% endblock %}
+
+{% block formulario %}
+<h3>Detalle del mensaje</h3>
+<hr></hr>
+<h4>Mensaje: {{ mensaje.titulo }}</h4>
+<h5>Emisor: {{ mensaje.emisor }}</h5>
+<h5>Receptor: {{ mensaje.receptor }}</h5>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ mensaje.contenido }}</textarea></p>
+<p><a class="btn btn-success" href="{% url 'mensajes' %}">Regresar a la lista de mensajes</a></p>
+
+{% endblock %}
