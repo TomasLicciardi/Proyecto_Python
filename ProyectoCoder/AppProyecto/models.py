@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -7,6 +8,8 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=50)
     direccion = models.CharField(max_length=50)
     edad = models.IntegerField()
+    fecha = models.DateField(default=datetime.now)
+    imagen = models.ImageField(upload_to='blog', null=True, blank=True)
 
     def __str__(self):
         return self.nombre + " " + self.apellido
