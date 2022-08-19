@@ -1,6 +1,10 @@
 # Proyecto_Python
-Creamos el Proyecto con us respectiva App, en la carpeta ProyectoCoder vinculamos en el archivo urls.py con el de la App (AppProyecto). Luego le indicamos en settings
-le vinculamos esta App. Trabajamos con sus respectivos templeates en el cual creamos un index.html que va a ser el padre de los demas templates y despues creamos
-un template para clientes, empleados, empresa en el cual cuenta cada uno con un formulario para ingresar datos a nuestra BD, luego un formulario de busqueda de clientes
-por medio del nombre en otro template aparte. Y otro template para que nos muestre dichas busquedas. Creamos las respectivas views y despues las enlazamos a estas vistas
-con los urls. 
+Primero creo el proyecto y luego realizo distintas aplicaciones segun los distintos usos. Una para los usuarios, otra para mensajeria y otra para los modelos. La utilizacion de diseño para la pagina web fue bootstrap (html5, Css, Javascript) y para los distintos modelos realize un CRUD (CreateReadUpdateDelete) en cada modelo.
+
+Contamos con muchos usuarios.
+
+Usuarios -> franbarone crossfitk8       juanimoreno crossfitk8      colomachado crossfitk8
+
+Video de la pagina
+
+Utilizacion de la pagina -> https://youtu.be/tljDFrZ9yA8
